@@ -12,7 +12,7 @@ Usage:
 """
 
 import os
-from src.parser import extract_bitmaps_from_pe
+from egf_parser import extract_bitmaps_from_pe
 
 # Set input and output directories
 INPUT_DIR = "data/input"
