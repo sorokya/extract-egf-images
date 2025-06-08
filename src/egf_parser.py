@@ -6,6 +6,7 @@ specifically targeting resources within PE (Portable Executable) files.
 """
 
 import pefile
+import struct
 
 def extract_bitmaps_from_pe(file_path):
     """
@@ -35,8 +36,10 @@ def extract_bitmaps_from_pe(file_path):
                         # Extract the offset and size of the resource data
                         data_rva = data_entry.data.struct.OffsetToData
                         size = data_entry.data.struct.Size
-                        data = pe.get_memory_mapped_image()[data_rva:data_rva+size]
-                        extracted_data[resource_id] = data
+                        raw_data = pe.get_memory_mapped_image()[data_rva:data_rva+size]
+
+                        # Save
+                        extracted_data[resource_id] = raw_data
 
     # Return the dictionary of extracted bitmap data
     return extracted_data

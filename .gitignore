@@ -13,3 +13,5 @@ ENV/
 
 # Output data ignored
 data/output/
+
+data/input/
