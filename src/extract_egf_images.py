@@ -33,7 +33,7 @@ def convert_to_png_with_transparency(bmp_data, use_8_0_0_rule):
         return img
 
 def extract_images():
-   for filename in os.listdir(INPUT_DIR):
+    for filename in os.listdir(INPUT_DIR):
         if filename.endswith(".egf"):
             file_path = os.path.join(INPUT_DIR, filename)
             print(f"Extracting images from: {file_path}")
